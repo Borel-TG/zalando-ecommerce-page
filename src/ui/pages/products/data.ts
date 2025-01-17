@@ -114,3 +114,55 @@ const productData = [
 ];
 
 export default productData;
+
+export const popularProducts = [
+  {
+    id: 1,
+    image: img1,
+    name: "Produit 1",
+    price: "29.99",
+    currency: "€",
+  },
+  {
+    id: 2,
+    image: img5,
+    name: "Produit 2",
+    price: "39.99",
+    currency: "€",
+  },
+  {
+    id: 3,
+    image: img66,
+    name: "Produit 3",
+    price: "19.99",
+    currency: "€",
+  },
+  {
+    id: 4,
+    image: img4,
+    name: "Produit 4",
+    price: "49.99",
+    currency: "€",
+  },
+  {
+    id: 5,
+    image: img33,
+    name: "Produit 5",
+    price: "24.99",
+    currency: "€",
+  },
+  {
+    id: 6,
+    image: img3,
+    name: "Produit 6",
+    price: "49.99",
+    currency: "€",
+  },
+  {
+    id: 7,
+    image: img22,
+    name: "Produit 6",
+    price: "24.99",
+    currency: "€",
+  },
+];

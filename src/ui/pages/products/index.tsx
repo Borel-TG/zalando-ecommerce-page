@@ -9,6 +9,7 @@ import Accordion from "@/ui/components/accordion";
 // context
 import { useCart } from "@/context/cartContext";
 import AppButton from "@/ui/components/appButton";
+import { PopularProducts } from "./popular";
 
 const product = productData[0];
 
@@ -25,9 +26,9 @@ export default function ProductPage() {
   const { addToCart } = useCart();
 
   return (
-    <div className="min-h-screen my-7 mx-0 md:mx-10">
+    <div className="min-h-screen my-7">
       {/* Main Content : max-w-7xl */}
-      <div className="">
+      <div className="mx-0 md:mx-10">
         <div className="flex flex-col md:flex-row gap-5 lg:gap-32">
           {/* Image Gallery */}
           <div className="flex-2">
@@ -135,6 +136,9 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+
+      {/* popular products */}
+      <PopularProducts />
     </div>
   );
 }
