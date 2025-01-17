@@ -25,7 +25,7 @@ const ProductImage: React.FC<Props> = ({
   return (
     <>
       <button
-        className={`relative mx-auto ${selected ? "ring-1 ring-black" : ""}`}
+        className={`relative mx-auto ${selected ? "border border-black" : ""}`}
         onMouseLeave={onMouseLeave ? onMouseLeave : undefined}
         onMouseEnter={onMouseEnter ? onMouseEnter : undefined}
         onClick={onClick ? onClick : undefined}
