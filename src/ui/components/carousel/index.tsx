@@ -37,7 +37,7 @@ export default function ProductCarousel(props: Props) {
       />
       <Button
         icon={<RightOutlined />}
-        className="absolute !rounded-none border !border-black top-[150px] left-[calc(100%-70px)] md:left-[calc(100%-50px)]  transform -translate-y-1/2 z-10"
+        className="absolute !rounded-none border !border-black top-[150px] left-[calc(100%-70px)] md:left-[calc(100%-70px)]  transform -translate-y-1/2 z-10"
         onClick={scrollRight}
       />
       <div

@@ -27,10 +27,10 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2">
             <li>Questions fréquentes</li>
-            <li>Essayez d'abord, payez après</li>
+            <li>Essayez dabord, payez après</li>
             <li>Suivre mon colis</li>
             <li>Guides des tailles</li>
-            <li>S'inscrire à la newsletter</li>
+            <li>Sinscrire à la newsletter</li>
           </ul>
         </div>
         {/* Column 2 */}
@@ -39,7 +39,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li>Offrir une carte cadeau</li>
             <li>Utiliser une carte cadeau</li>
-            <li>Chèques cadeaux d'entreprise</li>
+            <li>Chèques cadeaux dentreprise</li>
           </ul>
         </div>
         {/* Column 3 */}
@@ -111,7 +111,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold">Plus d'inspiration</h4>
+              <h4 className="font-semibold">Plus dinspiration</h4>
               <div className="flex space-x-2">
                 <FacebookOutlined className="text-xl" />
                 <TwitterOutlined className="text-xl" />
