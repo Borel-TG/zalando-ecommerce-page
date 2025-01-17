@@ -16,8 +16,8 @@ const productData = [
     id: "product-12345",
     seller: "ASICS SportStyle",
     name: "JOG 100S UNISEX - Baskets basses",
-    price: "129.99",
-    originalPrice: "149.99",
+    price: 129.99,
+    originalPrice: 149.99,
     includedTax: true,
     currency: "£",
 

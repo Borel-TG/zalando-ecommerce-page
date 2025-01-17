@@ -1,22 +1,18 @@
 "use client";
 import { useState } from "react";
 import productData from "./data";
-
-import {
-  ArrowDownOutlined,
-  ArrowUpOutlined,
-  HeartOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
+import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import ProductGallery from "@/ui/widgets/productGallery";
 import ProductImage from "@/ui/components/product/image";
 import { StaticImageData } from "next/image";
+import Accordion from "@/ui/components/accordion";
+// context
+import { useCart } from "@/context/cartContext";
+import AppButton from "@/ui/components/appButton";
 
 const product = productData[0];
 
 export default function ProductPage() {
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   // main product view
   const [mainImage, setMainImage] = useState<string | null | StaticImageData>(
     null
@@ -24,6 +20,9 @@ export default function ProductPage() {
   const [selectedVariant, setselectedVariant] = useState(
     product.variants[0].id
   );
+
+  // cart-hook
+  const { addToCart } = useCart();
 
   return (
     <div className="min-h-screen my-7 mx-0 md:mx-10">
@@ -92,60 +91,47 @@ export default function ProductPage() {
                 />
               ))}
             </div>
-            {/* Size Selection */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Size
-              </label>
-              <select
-                value={selectedSize}
-                onChange={(e) => setSelectedSize(e.target.value)}
-                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-black focus:border-black rounded-md"
-              >
-                {product.sizes.map((size) => (
-                  <option key={size} value={size}>
-                    {size}
-                  </option>
-                ))}
-              </select>
-            </div>
             {/* Actions */}
             <div className="space-y-4">
-              <button className="w-full bg-black text-white px-6 py-3 rounded-md flex items-center justify-center space-x-2 hover:bg-gray-800 transition-colors">
-                <ShoppingCartOutlined className="w-5 h-5" />
-                <span>Add to Bag</span>
-              </button>
-              <button className="w-full border border-gray-300 px-6 py-3 rounded-md flex items-center justify-center space-x-2 hover:bg-gray-50 transition-colors">
-                <HeartOutlined className="w-5 h-5" />
-                <span>Add to Wishlist</span>
-              </button>
+              {/* Add to Cart Button */}
+              <AppButton
+                label="Add to Cart"
+                icon={<ShoppingCartOutlined />}
+                onClick={() =>
+                  addToCart({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.variants[0].images[0].url.src,
+                    currency: product.currency,
+                  })
+                }
+                className="w-full bg-black border border-black text-white hover:bg-gray-400"
+              />
+
+              {/* Add to Wishlist Button */}
+              <AppButton
+                label="Add to Wishlist"
+                icon={<HeartOutlined />}
+                onClick={() => console.log("Added to Wishlist")}
+                className="w-full border border-gray-300 hover:bg-gray-50"
+              />
             </div>
+
             {/* Product Details */}
-            <div className="border-t pt-6">
-              <button
-                onClick={() => setIsDetailsOpen(!isDetailsOpen)}
-                className="flex items-center justify-between w-full text-left"
-              >
-                <span className="text-lg font-medium">Product Details</span>
-                {isDetailsOpen ? (
-                  <ArrowDownOutlined className="w-5 h-5" />
-                ) : (
-                  <ArrowUpOutlined className="w-5 h-5" />
-                )}
-              </button>
-              {isDetailsOpen && (
-                <div className="mt-4 space-y-4">
-                  <p className="text-gray-600">{product.description}</p>
-                  <ul className="space-y-2">
-                    {product.details.map((detail, index) => (
-                      <li key={index} className="text-gray-600">
-                        • {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+
+            <Accordion title="Product Details">
+              <>
+                <p className="text-gray-600">{product.description}</p>
+                <ul className="space-y-2">
+                  {product.details.map((detail, index) => (
+                    <li key={index} className="text-gray-600">
+                      • {detail}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            </Accordion>
           </div>
         </div>
       </div>
