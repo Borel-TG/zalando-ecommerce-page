@@ -26,10 +26,10 @@ export default function ProductPage() {
   );
 
   return (
-    <div className="min-h-screen my-7 mx-10">
+    <div className="min-h-screen my-7 mx-0 md:mx-10">
       {/* Main Content : max-w-7xl */}
       <div className="">
-        <div className="flex flex-col md:flex-row gap-5 lg:gap-32 border-red-500">
+        <div className="flex flex-col md:flex-row gap-5 lg:gap-32">
           {/* Image Gallery */}
           <div className="flex-2">
             <ProductGallery
@@ -44,7 +44,7 @@ export default function ProductPage() {
           </div>
 
           {/* Product Info */}
-          <div className="flex-1 space-y-4">
+          <div className="flex-1 space-y-4 px-3 md:px-0">
             <div className="cursor-pointer space-y-0">
               <p className="text-3xl  text-gray-800 hover:underline">
                 {product.seller}

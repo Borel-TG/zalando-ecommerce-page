@@ -70,7 +70,7 @@ const VerticalCarousel: React.FC<VerticalCarouselProps> = ({
   }, [images.length]); // Re-run when ever image changes
 
   return (
-    <div className="relative border border-red-400">
+    <div className="relative">
       {/* Up Button */}
       {showDownButton && (
         <Button

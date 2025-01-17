@@ -14,13 +14,15 @@ export default function ProductGallery({ images, tags, mainView }: Props) {
   return (
     <div className="bg-white cursor-pointer">
       <div className="flex flex-row gap-4">
-        <VerticalCarousel
-          images={images}
-          selectedImage={selectedImage}
-          onSelectImage={setSelectedImage}
-        />
+        <div className="hidden lg:block">
+          <VerticalCarousel
+            images={images}
+            selectedImage={selectedImage}
+            onSelectImage={setSelectedImage}
+          />
+        </div>
         <div className="relative aspect-square overflow-hidden">
-          <div className="w-[600px]">
+          <div className="w-svw md:w-[400px] xl:w-[600px]">
             <Image
               src={mainView !== null ? mainView : images[selectedImage]}
               alt={"product-image"}
