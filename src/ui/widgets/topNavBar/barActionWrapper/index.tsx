@@ -23,7 +23,7 @@ function BarAction({ icon, children }: Props) {
       </div>
       {/* children drop-down */}
       {children && (
-        <div className="z-30 h-[150px] p-2 bg-white border-2 border-black min-w-[300px] absolute top-full bottom-0 right-0 group-hover:block hidden">
+        <div className="z-30 h-fit bg-white border-2 border-black min-w-[300px] absolute top-full bottom-0 right-0 group-hover:block hidden">
           {children}
         </div>
       )}
