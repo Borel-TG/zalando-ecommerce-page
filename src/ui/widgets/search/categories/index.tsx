@@ -22,7 +22,6 @@ function SearchCategories() {
             key={i}
             className="relative"
             onMouseEnter={() => setActiveSubcategories(item.subcategories)}
-            // onMouseLeave={() => setActiveSubcategories(null)}
           >
             <NavLink url="#" label={item.label} />
           </div>
