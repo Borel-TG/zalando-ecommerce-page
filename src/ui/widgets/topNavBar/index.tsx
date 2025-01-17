@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <div className="w-full flex justify-between items-center p-0 flex-row py-3">
       {/* nav link list */}
-      <div>
+      <div className="hidden md:block">
         <NavLinks links={topNavLinks} />
       </div>
       {/* brand */}
@@ -22,9 +22,9 @@ function Navbar() {
       </div>
       {/* actions button */}
       <div className="flex gap-3 items-end">
-        <BarAction icon={<UserOutlined style={{ fontSize: 25 }} />} />
-        <BarAction icon={<HeartOutlined style={{ fontSize: 25 }} />} />
-        <BarAction icon={<ShoppingCartOutlined style={{ fontSize: 25 }} />}>
+        <BarAction icon={<UserOutlined className="text-[25px]" />} />
+        <BarAction icon={<HeartOutlined className="text-[25px]" />} />
+        <BarAction icon={<ShoppingCartOutlined className="text-[25px]" />}>
           <MenuCartList
             list={[
               {
